@@ -1,0 +1,66 @@
+
+<html>
+
+    <head>
+        <title>Demo</title>
+    </head>
+
+    <body>
+
+        <b>Username</b>
+        <input type="text" placeholder="Enter Username" id="uname">
+        <br/>
+        <br/>
+
+        <b>Password</b>
+        <input type="password" placeholder="Enter Password" id="pwd">
+        <br/>
+        <br/>
+
+        <button onclick="logs()">Login</button>
+
+        <script>
+
+            var i = document.getElementById('uname');
+            var j = document.getElementById('pwd');
+
+            function logs() {
+
+                alert(i.value);
+                console.log(i.value);
+                alert(j.value);
+                console.log(j.value);
+
+                //if we want stores the key value permanently
+                
+                //localStorage.setItem(i.value,j.value);
+                //console.log(localStorage.getItem(i.value));
+
+                //if we want to store the value for one session after closed the session it gone out,
+                //but refreshing won't erase the value(session means terminate that session which is closing)
+                
+                //sessionStorage.setItem(i.value,j.value);
+                //console.log(sessionStorage.getItem(i.value));
+                
+            }
+
+            //created class & object for that(having a constructor & a method)
+
+            /*class Demo1{
+                constructor(){
+                    console.log("Hii");
+                }
+                hello(){
+                    console.log("hello");
+                }
+            }
+
+            var ab = new Demo1();
+           
+            ab.hello();*/
+
+        </script>
+
+    </body>
+
+</html>
