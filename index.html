@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+	<input type="text" placeholder="enter userid" id="uid">
+	<br/>
+	
+	<button onclick="output()">Output</button>
+
+	<script>
+		
+		let myArray = [ 
+		{ 
+			"userid" : 10, 
+			"username" : "Ramesh", 
+			"age" : 28, 
+			"fdamount" : 200000 
+		}, 
+		  
+		 { 
+			"userid" : 25, 
+			"username" : "Mallow", 
+			"age" : 24, 
+			"fdamount" : 100000 
+		}, 
+		  
+		{ 
+			"userid" : 15, 
+			"username" : "Manimaran	", 
+			"age" : 46, 
+			"fdamount" : 200000 
+		},              
+		{ 
+			"userid" : 20, 
+			"username" : "Suresh",
+			"age" : 41, 
+			"fdamount" : 1000000 
+		} 
+              
+	    ]
+
+	    var myuid = document.getElementById('uid');
+	    
+	    //function fetchuid(){
+
+	    //	console.log(myuid.value);
+
+	    //}
+
+	    var newuid = [];
+
+	    for(var i = 0; i<myArray.length;i++){
+	    sessionStorage.setItem(myArray[i].username,myArray[i].userid);
+
+ 
+        newuid[i] = sessionStorage.getItem(myArray[i].username);
+	    
+    	}
+	    
+	    
+
+	    function output(){
+	    	
+	    	var si;
+
+	    	var userNotFount = 0;
+
+	    	for(var i = 0; i<myArray.length;i++){
+	    	//alert(myArray[i].userid);
+	    	//console.log(newuid);
+	    	if (myuid.value === newuid[i]) {
+
+	    		console.log(myArray[i].username);
+	    		
+
+	    		userNotFount++;
+	    		
+	    		var time = 1;
+	    		//to find interest  SI = P x R x T/ 100
+	    		if(myArray[i].age>=18 && myArray[i].age<25){
+	    			si = (myArray[i].fdamount * 6 * time)/100;
+	    			console.log(si);
+	    			break;
+	    		}
+	    		else if(myArray[i].age>=25 && myArray[i].age<40){
+	    			si = (myArray[i].fdamount * 6.5 * time)/100;
+	    			console.log(si);
+	    			break;
+	    		}
+	    		else if(myArray[i].age>=40){
+	    			si = (myArray[i].fdamount * 7 * time)/100;
+	    			console.log(si);
+	    			break;
+	    		}
+
+	    	}
+
+	    	
+
+	    } if(userNotFount ===0){
+	    	console.log("Enter correct UserID");
+	    	
+	    }
+
+	    	
+	}
+
+	</script>
+
+</body>
+
+</html>
